@@ -1,1 +1,0 @@
-Can't not be reprinted without permission.

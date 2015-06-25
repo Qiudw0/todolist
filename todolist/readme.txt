@@ -1,0 +1,1 @@
+这是一个运用本地存储信息的简易todolist。添加的信息记录保存在本地的cookie中，保存时间为7天。在Chrome浏览器下使用本todo需要在服务器上运行。直接打开todolist.html文件即可使用。

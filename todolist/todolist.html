@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>todoList</title>
+
+    <link rel="stylesheet" href="todolist.css">
+</head>
+<body>
+    <header>
+        <div id="logo">TodoList</div>
+        <div id="search">
+            <input type="text" placeholder="请输入关键字...">
+            <div class="sea_icon"></div>
+        </div>
+    </header>
+    <article>
+        <aside>
+            <div id="filter" class="title">过滤器</div>
+            <div id="data" class="filter_item">
+                <span>选择日期</span>
+                <input type="radio" name="data" id="day1">
+                <label for="day1">星期一</label>
+                <input type="radio" name="data" id="day2">
+                <label for="day2">星期二</label>
+                <input type="radio" name="data" id="day3">
+                <label for="day3">星期三</label>
+                <input type="radio" name="data" id="day4">
+                <label for="day4">星期四</label>
+                <input type="radio" name="data" id="day5">
+                <label for="day5">星期五</label>
+                <input type="radio" name="data" id="day6">
+                <label for="day6">星期六</label>
+                <input type="radio" name="data" id="day7">
+                <label for="day7">星期日</label>
+                <input type="radio" name="data" id="all">
+                <label for="all">All</label>
+            </div>
+            <div id="level" class="filter_item">
+                <span>选择优先级</span>
+                <input type="radio" name="level" id="star1">
+                <label class="first_label" for="star1"><div class="star_icon"></div></label>
+                <input type="radio" name="level" id="star2">
+                <label for="star2"><div class="star_icon"></div></label>
+                <input type="radio" name="level" id="star3">
+                <label for="star3"><div class="star_icon"></div></label>
+                <input type="radio" name="level" id="star4">
+                <label for="star4"><div class="star_icon"></div></label>
+                <input type="radio" name="level" id="star5">
+                <label for="star5"><div class="star_icon"></div></label>
+            </div>
+        </aside>
+        <div id="main">
+            <div id="add_task" class="title">
+                <div id="add" class="add_icon"></div>
+                <label>添加</label>
+                <div id="edit_task" class="dn">
+                    <form name="myTask" method="get" action="mockServer.htm">
+                        <input type="hidden" name="function" value="addTask">
+                        <div id="title_date" class="field">
+                            <label>任务标题：</label>
+                            <input type="text" name="title" required>
+                            <label>Date：</label>
+                            <input type="date" name="deadLine" required>
+                        </div>
+                        <div id="task_desc" class="field">
+                            <label>任务描述：</label>
+                            <textarea name="content" required></textarea>
+                        </div>
+                        <div class="field">
+                            <button type="submit">提交</button>
+                            <button type="reset">重填</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="task_show">
+                <div class="show">
+                    <div class="r_sanjiao_icon"></div><h3 class="dateitem">星期日</h3>
+                    <div id="test" class="items dn" value="0">
+                        <div class="item">
+                            <label class="titleitem">标题一</label><label class="time">6月5号</label><label class="del">删除</label><label class="modi">修改</label>
+                            <p class="dn">任务内容描述</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="show">
+                    <div class="r_sanjiao_icon"></div><h3 class="dateitem">星期一</h3>
+                    <div class="items dn" value="1">
+                    </div>
+                </div>
+                <div class="show">
+                    <div class="r_sanjiao_icon"></div><h3 class="dateitem">星期二</h3>
+                    <div class="items dn" value="2">
+                    </div>
+                </div>
+                <div class="show">
+                    <div class="r_sanjiao_icon"></div><h3 class="dateitem">星期三</h3>
+                    <div class="items dn" value="3">
+                    </div>
+                </div>
+                <div class="show">
+                    <div class="r_sanjiao_icon"></div><h3 class="dateitem">星期四</h3>
+                    <div class="items dn" value="4">
+                    </div>
+                </div>
+                <div class="show">
+                    <div class="r_sanjiao_icon"></div><h3 class="dateitem">星期五</h3>
+                    <div class="items dn" value="5">
+                    </div>
+                </div>
+                <div class="show">
+                    <div class="r_sanjiao_icon"></div><h3 class="dateitem">星期六</h3>
+                    <div class="items dn" value="6">
+                    </div>
+                </div>
+            </div>
+            <div id="finished" class="task_show">
+                <div class="title">已完成</div>
+                <ul id="delItems"><!--存放已删除但未被彻底删除的任务-->
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <script type="text/javascript" src="base.js"></script>
+    <script type="text/javascript" src="jscript.js"></script>
+    <script type="text/javascript" src="taskItem.js"></script>
+    <script type="text/javascript" src="task.js"></script>
+    <script type="text/javascript" src="animation.js"></script>
+    <script type="text/javascript" src="todolist.js"></script>
+
+</body>
+</html>

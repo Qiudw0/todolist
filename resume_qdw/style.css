@@ -1,0 +1,349 @@
+body,div,p{margin:0; padding:0;}
+body{
+    background: #fff;
+    /*overflow: hidden;*/
+}
+
+.info{
+    width:100%;
+}
+.fill{
+    height: 50px;
+    width:100%;
+    opacity: 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); /*IE6~IE8*/
+}
+.left{
+    position: absolute;
+    width:auto;
+    height:auto;
+    /*opacity: 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); *//*IE6~IE8*/
+}
+.content{
+    position:absolute;
+    width:500px;
+    height:auto;
+    border-radius: 3px;
+    background: #fff;
+    overflow: hidden;
+}
+.title{
+    position: relative;
+    height:40px;
+    line-height: 40px;
+    width:100%;
+    border-radius: 3px 3px 0 0;
+    background: #40C689;
+}
+.title label{
+    margin-left:10px;
+    font-size:18px;
+    letter-spacing: 3px;
+    color:#fff;
+}
+.l{
+    float:left;
+}
+.r{
+    float:right;
+}
+.information{
+    width:100%;
+    margin-bottom: 20px;
+    height:auto;
+}
+.information span{
+    display: block;
+    margin-left:15px;
+    margin-right:10px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    line-height: 25px;
+    color:#000;
+}
+.information span[class='green']{
+    color:#40C689;
+}
+
+#navigation{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 50px;
+    background: url(imgs/opc_01.png) repeat;
+    z-index: 100;
+}
+#navigation .menu{
+    width:200px;
+    height:50px;
+    margin:auto;
+}
+#navigation span{
+    display: block;
+    float: left;
+    margin-top:20px;
+    margin-left:15px;
+    height:8px;
+    width:8px;
+    border:2px solid #666;
+    border-radius: 16px;
+    cursor: pointer;
+}
+.active_span{
+    background: #666;
+}
+#navigation span[id='per_span']{
+    margin-left:50px;
+}
+
+#person{
+    background: url(imgs/bg_01.jpg);
+}
+#person #per_con{
+    display: none;
+    margin-top:20px;
+    left:55%; 
+    -moz-transform-origin:left top; /*Firefox*/ 
+    -moz-transform:rotate(0deg); 
+    -webkit-transform-origin:left top; /*Chrome*/
+    -webkit-transform:rotate(0deg); 
+    -ms-transform-origin:left top; /*ie9+*/
+    -ms-transform:rotate(0deg);
+}
+#person #per_left{
+    margin-top:70px;
+    margin-left: 100px;
+}
+#person #per_left p{  
+    display:none;
+    word-spacing: 5px;
+    margin-top:40px;
+    margin-bottom: 40px;
+    padding-left:20px;
+    font-family: "楷体";
+    font-size: 30px;
+    color:#fff;
+    border:3px solid #fff;
+    border-radius: 25px;
+    line-height: 2;
+}
+
+#person .information img{
+    width:100px;
+    height:130px;
+    margin-right: 50px;
+    margin-top: -100px;
+    float:right;
+    border:none;
+}
+
+#person #per_name{
+    width:90px;
+    margin-left:50px;
+    letter-spacing: 3px;
+    font-size: 20px;
+    line-height: 3;
+    font-weight: bold;
+}
+
+#person #per_left p[id='per_p1']{
+    width:250px;
+}
+#person #per_left p[id='per_p2']{
+    width:250px;
+    margin-left:175px;
+}
+#person #per_left p[id='per_p3']{
+    width:215px;
+    margin-left:85px;
+}
+
+#education{
+    background: url(imgs/bg_02.jpg) right;
+}
+#edu_con{
+    display: block;
+    opacity: 0;
+    margin-top:-30px;
+    margin-left:120px;
+}
+#education #edu_left{
+    margin-top:20px;
+    left:50%;
+}
+#education #edu_left p{
+    word-spacing: 5px;
+    margin-top:40px;
+    margin-bottom: 40px;
+    padding-left:20px;
+    font-family: "STXingkai";
+    font-size: 30px;
+    color:#2B99FF;
+    border:3px solid #2B99FF;
+    border-radius: 25px;
+    line-height: 2;
+}
+#education #edu_left .circle{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #2B99FF;
+    border-radius: 30px;
+}
+#education #edu_left .rcir{
+    margin-top: 10px;
+    margin-right: -36px;  
+}
+#education #edu_left .lcir{
+    margin-top: 13px;
+    margin-left: -56px;  
+}
+#education #edu_left p[id='edu_p1']{
+    width:225px;
+    margin-left: 385px;
+}
+#education #edu_left p[id='edu_p2']{
+    width:410px;
+    margin-left: -100px;
+}
+#education #edu_left p[id='edu_p3']{
+    width:150px;
+    margin-left: 385px;
+}
+#education #edu_left p[id='edu_p4']{
+    width:145px;
+    margin-left: -100px;
+}
+
+#program_experience{
+    background: url(imgs/bg_03.jpg);
+}
+#program_experience #exp_con{
+    margin-top:-35px;
+    left:50%;
+    opacity: 0;
+    -moz-transform-origin:right top; 
+    -moz-transform:rotate(0deg); 
+    -webkit-transform-origin:right top; 
+    -webkit-transform:rotate(0deg);
+    -ms-transform-origin:right top; /*ie9+*/
+    -ms-transform:rotate(0deg);
+}
+#program_experience #exp_con .information p{
+    width:auto;
+    margin:auto;
+    border-top:1px solid #40C689;
+}
+#program_experience #exp_left{
+    margin-top:70px;
+    margin-left: 130px;
+}
+#program_experience #exp_left p{
+    margin:auto;
+    word-spacing: 5px;
+    margin-top:40px;
+    margin-bottom: 40px;
+    padding-left:20px;
+    font-family: "Microsoft YaHei";
+    font-size: 30px;
+    color:#000;
+    border:3px solid #000;
+    border-radius: 25px;
+    line-height: 2;
+}
+#program_experience #exp_left p[id='exp_p1']{
+    display: none;
+    width:388px;
+}
+#program_experience #exp_left p[id='exp_p2']{
+    display: none;
+    width:290px;
+}
+#program_experience #exp_left img{
+    margin:auto;
+    width:300px;
+    height:200px;
+}
+#program_experience #exp_left img[id='exp_img1']{
+    display: none;
+    margin-left:60px;
+}
+
+#school_experience{
+    background: url(imgs/bg_04.jpg) right;
+}
+#school_experience #sch_con{
+    margin-top:50px;
+    margin-left:-100px;
+    opacity: 0;
+}
+#school_experience #sch_left{
+    margin-top:60px;
+    left:55%;
+}
+#school_experience #sch_left p{
+    word-spacing: 5px;
+    margin-bottom: 40px;
+    padding-left:20px;
+    font-family: "STXingkai";
+    font-size: 30px;
+    color:#000;
+    line-height: 2;
+}
+#school_experience #sch_left img{
+    margin:auto;
+    width:341px;
+    height:243px;
+}
+#school_experience #sch_left img[id='sch_img1']{
+    display: none;
+    margin-left:120px;
+}
+#school_experience #sch_left p[id='sch_p1']{
+    width:410px;
+    text-indent: 45px;
+}
+
+#skill_honor{
+    background: url(imgs/bg_05.jpg);
+}
+#skill_honor #ski_con{
+    margin-top:180px;
+    opacity: 0;
+    left:50%;
+}
+#skill_honor #ski_left{
+    margin-top:20px;
+    margin-left: 85px;
+}
+#skill_honor #ski_left p{
+    word-spacing: 5px;
+    margin-top:20px;
+    margin-bottom: 20px;
+    padding-left:20px;
+    font-family: "Microsoft YaHei";
+    font-size: 30px;
+    color:#fff;
+    border:3px solid #fff;
+    border-radius: 25px;
+    line-height: 2;
+}
+#skill_honor #ski_left p[id='ski_p1']{
+    margin-left:-100px;
+    width:365px;
+}
+#skill_honor #ski_left p[id='ski_p2']{
+    width:450px;
+    margin-left:-60px;
+}
+#skill_honor #ski_left img{
+    margin-left:70px;
+    height:300px;
+    width:240px;
+}
+#skill_honor #ski_left img[id='ski_img1']{
+    opacity: 0;
+}

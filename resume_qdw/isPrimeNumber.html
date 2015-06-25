@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断素数 | 逆序</title>
+</head>
+<script type="text/javascript" src="isPrimeNumber.js"></script>
+<script type="text/javascript">/*
+    function isPrimeNumber(num){
+        if(num === 0) return false;;
+        for(var i = 2; i < Math.sqrt(num); i++){
+            if(num % i == 0){
+                return true;
+            }
+        }
+        return false ;
+    }
+
+    function test(){
+        console.log(isPrimeNumber(2));    
+    }*/
+
+    /*function reverse(src){
+        var newStr = '';
+        var arr = src.split('');
+        for(var i = arr.length-1; i >= 0; i--){
+            newStr += arr[i];
+        }
+        console.log(newStr);
+    }*/
+
+    var nums = [1,3,8,19,6,34,54,27];
+    function findSecongNum(){
+        console.log(quickSort(nums,0,nums.length-1));
+
+    }
+    
+</script>
+<body onload="quickSort()">
+    
+</body>
+
+</html>

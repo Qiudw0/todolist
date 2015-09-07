@@ -1,1 +1,1 @@
-﻿可重用的JS Code
+version2.0 使用html5的localStorage存储数据

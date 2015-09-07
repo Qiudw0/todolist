@@ -1,1 +1,2 @@
-version2.0 使用html5的localStorage存储数据
+The version1.0 store user data by cookie.
+The version2.0 store user data by localStorage.

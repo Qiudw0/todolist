@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myTodo</title>
+
+    <link href="../bootstrap/bootstrap-3.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+    <section class="top-sextion">
+        <div class="top">
+            <div class="head clearfix">
+                <div class="clearfix"></div>
+                <ul>
+                    <li>登录</li>
+                    <li>注册</li>
+                </ul>
+            </div>
+            <canvas id="clock"></canvas>
+            <div class="date-time">
+                <span id="year">2015</span>
+                <span>/</span>
+                <span id="month">09</span>
+                <span>/</span>
+                <span id="date">03</span>
+                <p id="day"></p>
+            </div>
+            <div class="clearfix">
+                <div class="div-date">
+                    <p class="p-date">Set Date:</p>
+                    <input id="input-date" type="date">
+                </div>
+                <div class="input-frame clearfix">
+                    <!-- <textarea id="text-area" class="form-control"></textarea> -->
+                    <input id="text-area" type="text" class="form-control">
+                </div>
+            </div>  
+        </div>
+    </section>
+    <section class="bottom clearfix">
+        <div id="runing" class="content">
+            <div id="runTitle" class="title text-left">Runing</div>
+        </div>
+        <div id="completed" class="content clearfix">
+            <div id="completeTitle" class="title text-left">Completed</div>
+        </div>
+    </section>
+    <div class="footer"></div>
+
+    <div id="new-run-task" style="display:none;"></div>
+    <div id="new-com-task" style="display:none;"></div>
+
+
+    <script type="text/javascript" src="../jquery/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

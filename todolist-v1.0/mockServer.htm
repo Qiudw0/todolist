@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+
+    <script type="text/javascript" src="jscript.js"></script>
+    <script type="text/javascript" src="taskItem.js"></script>
+    <script type="text/javascript" src="task.js"></script>
+
+    <script>
+
+
+      /**
+       * Process the requested operation.
+       * 服务器上用于判断执行哪个功能的组件
+       */
+      function process() {
+
+        var func = getParameter("function");
+        if (func) {
+          //func指一下的函数，加工之后func为processViewDescriptiond的形式
+          func = "process" + func.substr(0, 1).toUpperCase() + func.substr(1);
+          if (eval("window." + func)) {
+            eval(func + "();"); // 执行函数
+          } else {
+            alert("Unimplemented function received"); // 未实现的方法
+          }
+        }
+
+      } // End process().
+
+
+      /**
+       * Redirects to the appropriate description page for a selected item.
+       * 非js模式下点击描述链接时调用的函数
+       */
+      function processViewDescription() {
+
+        var itemID = getParameter("itemID");
+        window.location = "descs/id" + itemID + ".htm"; // 重定向
+
+      } // End processViewDescription().
+
+
+      /**
+       * 
+       * 点击保存任务时调用
+       */
+      function processAddTask() {
+        // Add new item.
+        // 从前台获取数据
+        var newItemTitle = getParameter("title");
+        var newItemDeadLine = getParameter("deadLine");
+        var newItemContent = getParameter("content");
+        var itemToAdd = new TaskItem();
+        itemToAdd.setTitle(newItemTitle);
+        itemToAdd.setDeadLine(newItemDeadLine);
+        itemToAdd.setContent(newItemContent);
+        task.addItem(itemToAdd);
+        window.location = "todolist.html";
+
+      } // End processAddTask().
+
+
+      /**
+       * Updates the quantity of an item in the cart.
+       * 修改任务时调用的函数
+       */
+      function processUpdateTask() {
+
+        var itemIndex = getParameter("itemIndex"); // 这个要怎么获取？
+        // 从前台获取数据
+        var newItemTitle = getParameter("itemTitle");
+        var newItemDeadLine = getParameter("deadLine");
+        var newItemContent = getParameter("content");
+        // var newQuantity = getParameter("quantity");
+        if (newItemTitle != null && newItemDeadLine != null && newItemContent != null) {
+          task.updateTitle(newItemTitle);
+          task.updateDeadline(newItemDeadLine);
+          task.updateContent(newItemContent);
+        } else{
+          alert("更新失败！");
+        }
+
+        // window.location = "viewCart.htm";
+
+      } // End processUpdateQuantity().
+
+
+      /**
+       * Deletes an item from the cart.
+       * 删除商品时调用
+       */
+      function processDeleteTask() {
+
+        var itemIndex = getParameter("itemIndex");
+        cart.deleteItem(itemIndex);
+
+        // window.location = "viewCart.htm";
+
+      } // End processDelete().
+
+
+    </script>
+
+  </head>
+
+  <body onLoad="process();"></body>
+
+</html>

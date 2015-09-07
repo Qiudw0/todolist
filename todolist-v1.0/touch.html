@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>touch</title>
+</head>
+<style type="text/css">
+    #box{
+        position: absolute;
+        left:10px;
+        top:10px;
+        height:200px;
+        width:200px;
+        background:lime;
+    }
+</style>
+<script type="text/javascript">
+    function drag(){
+        var box = document.getElementById('box');
+        var dragable = false;
+        var touchOffsetX = 0;
+        var touchOffsetY = 0;
+
+        box.addEventListener('touchstart',function(e){
+            var e = e || window.event;  // e表示鼠标对象
+            e.preventDefault(); // 阻值mousedown的默认事件
+            touchOffsetX = e.changedTouches[0].clientX - box.offsetLeft;  
+            touchOffsetY = e.changedTouches[0].clientY - box.offsetTop;
+            dragable = true;
+        },false);
+
+        var moveX = 0;  // 被拖动对象的最终位置
+        var moveY = 0;
+
+        document.addEventListener('touchmove',function(e){
+            var e = e || window.event;
+            e.preventDefault(); // 阻值mousedown的默认事件
+            // 鼠标相对于父对象的当前位置
+            var touchX = e.changedTouches[0].clientX;  
+            var touchY = e.changedTouches[0].clientY;
+            if(dragable){
+                moveX = touchX - touchOffsetX; // 计算出对象移动后的位置
+                moveY = touchY - touchOffsetY;
+                console.log(touchY+' '+touchOffsetY);
+                box.style.left = moveX + 'px';
+                box.style.top = moveY + 'px';
+            }
+        },false);
+
+        document.addEventListener('touchend',function(){
+            dragable = false;
+        },false);
+    }
+</script>
+<body onload="drag()">
+    <div id="box"></div>
+</body>
+</html>
